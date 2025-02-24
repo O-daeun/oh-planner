@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -13,12 +13,21 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
 
-export function login() {
-  signInWithPopup(auth, provider)
+export async function login() {
+  return signInWithPopup(auth, provider)
     .then((result) => {
       const user = result.user;
       console.log(user);
+      return user;
     })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+export async function logout() {
+  return signOut(auth)
+    .then(() => null)
     .catch((error) => {
       console.log(error);
     });
