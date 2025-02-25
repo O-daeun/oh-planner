@@ -3,8 +3,8 @@ import '@/styles/globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Plona',
-  description: 'Plan it, Own it, Achieve it.',
+  title: 'Oh-Planner',
+  description: '내 인생을 계획해서 살아보자.',
 };
 
 export default function RootLayout({
@@ -13,10 +13,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='ko'>
+    <html lang="ko">
       <body>
         <Header />
-        {children}</body>
+        {children}
+      </body>
     </html>
   );
 }
