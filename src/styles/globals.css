@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/fonts/PretendardVariable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Supermagic';
+  src: url('/fonts/Cafe24Supermagic-Regular-v1.0.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Supermagic';
+  src: url('/fonts/Cafe24Supermagic-Bold-v1.0.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Pretendard';
+}
