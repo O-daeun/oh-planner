@@ -1,36 +1,23 @@
 'use client';
 
-import { login, logout } from '@/apis/firebase';
-import { User } from 'firebase/auth';
-import { useState } from 'react';
+import { useAuthContext } from '@/contexts/auth-context';
+import Image from 'next/image';
 
 export default function Header() {
-  const [user, setUser] = useState<User | null>(null);
+  const { user, login, logout } = useAuthContext();
 
-  const handleLogin = async () => {
-    const loggedInUser = await login();
-    if (loggedInUser) {
-      setUser(loggedInUser);
-    }
-  };
-
-  const handleLogout = async () => {
-    await logout();
-    setUser(null);
-  };
-  console.log(user);
   return (
     <header>
       {user && (
         <div>
+          {user.photoURL && (
+            <Image src={user.photoURL} width={30} height={30} alt="프로필 이미지" />
+          )}
           <p>{user.displayName}</p>
         </div>
       )}
-      {user ? (
-        <button onClick={handleLogout}>로그아웃</button>
-      ) : (
-        <button onClick={handleLogin}>로그인</button>
-      )}
+      {user && <button onClick={logout}>로그아웃</button>}
+      {user === null && <button onClick={login}>로그인</button>}
     </header>
   );
 }
