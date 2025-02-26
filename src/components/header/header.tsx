@@ -8,8 +8,10 @@ export default function Header() {
   const { user, login, logout } = useAuthContext();
 
   return (
-    <header className="flex items-center justify-between p-2 border-b ">
-      <Link href="/">Oh Planner</Link>
+    <header className="flex items-center justify-between border-b p-2">
+      <Link href="/" className="font-supermagic text-lg">
+        Oh Planner
+      </Link>
       <div className="flex items-center gap-3">
         {user && (
           <div className="flex items-center gap-2">
