@@ -4,7 +4,7 @@ import { FormEvent, useState } from 'react';
 import MainButton from './ui/main-button';
 import MainInput from './ui/main-input';
 
-export default function Schedule() {
+export default function TaskAddForm() {
   const { user } = useAuthContext();
   const [task, setTask] = useState({
     title: '',
