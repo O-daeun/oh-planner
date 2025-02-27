@@ -5,11 +5,12 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
 }
 
-export default function MainButton({ children, className, ...rest }: Props) {
+export default function MainButton({ children, className, disabled, ...rest }: Props) {
   return (
     <button
+      disabled={disabled}
       {...rest}
-      className={`bg-var-orange-main text-whit rounded-md p-2 text-lg ${className}`}
+      className={`rounded-md p-2 text-lg duration-200 ${disabled ? 'bg-gray-300 text-gray-400' : 'bg-var-orange-main hover:bg-var-orange-main/90 text-white'} ${className}`}
     >
       {children}
     </button>
