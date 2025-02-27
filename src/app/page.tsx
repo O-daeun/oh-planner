@@ -1,11 +1,12 @@
 'use client';
 
 import Schedule from '@/components/schedule';
+import InnerLayout from '@/components/ui/inner-layout';
 
 export default function HomePage() {
   return (
-    <div className="">
+    <InnerLayout className="py-8">
       <Schedule />
-    </div>
+    </InnerLayout>
   );
 }
