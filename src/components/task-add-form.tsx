@@ -1,4 +1,4 @@
-import { addData } from '@/apis/firebase';
+import { addTask } from '@/apis/firebase';
 import { useAuthContext } from '@/contexts/auth-context';
 import { FormEvent, useState } from 'react';
 import MainButton from './ui/main-button';
@@ -14,7 +14,7 @@ export default function TaskAddForm() {
 
   const handleAddTask = (e: FormEvent) => {
     e.preventDefault();
-    addData(user, task);
+    addTask(user, task);
   };
 
   return (
