@@ -25,7 +25,13 @@ const provider = new GoogleAuthProvider();
 const db = getFirestore(app);
 
 export function login() {
-  signInWithPopup(auth, provider).catch(console.error);
+  signInWithPopup(auth, provider).catch((error) => {
+    if (error.code === 'auth/popup-closed-by-user') {
+      console.warn('사용자가 로그인 팝업을 닫았습니다.');
+    } else {
+      console.error('로그인 오류:', error.message);
+    }
+  });
 }
 
 export function logout() {
