@@ -12,6 +12,12 @@ export default {
         pretendard: ['Pretendard', 'sans-serif'],
         supermagic: ['Supermagic', 'sans-serif'],
       },
+      colors: {
+        'var-green-main': '#0D4715',
+        'var-green-100': '#41644A',
+        'var-orange-main': '#E9762B',
+        'var-background': '#F1F0E9',
+      },
     },
   },
 } satisfies Config;
